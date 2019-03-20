@@ -1,3 +1,5 @@
+package ua.stqa.pft.sandbox;
+
 public class TolRock {
 	
 	public static void main(String[] args) {
