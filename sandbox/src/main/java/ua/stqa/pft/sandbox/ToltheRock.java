@@ -17,29 +17,23 @@ public class ToltheRock {
 		//double : double myDouble = 77.7 (0.0d, default is 0, default decimal digit!);
 		//boolean : boolean booleanVariable = true (false or true, default is false);
 		//char : char myCharacter = "TolRock" (Min 0 and Max 65535);
-		Square s = new Square();
-		s.l = 6;
-		System.out.println("Площадь квадрата со стороной " + s.l + " = " + area(s));
+		Square s = new Square(6);
+		//s.l = 6;
+		System.out.println("Площадь квадрата со стороной " + s.l + " = " + s.area());
 
-		Rectangle r = new Rectangle();
-		r.a = 4;
-		r.b = 6;
-		System.out.println("Площадь прямоугольника со сторонфми " + r.a + " и " + r.b +  " = " + area(r));
+		Rectangle r = new Rectangle(4, 6);
+		//r.a = 4;
+		//r.b = 6;
+		System.out.println("Площадь прямоугольника со сторонфми " + r.a + " и " + r.b +  " = " + r.area());
 
 	}
-	/*public static void hi(String s) {
+
+	/*
+	public static void hi(String s) {
 		System.out.println("Hey, there. How it's going? " + s);
 		System.out.println("Quality in details, work, work, work! Don't forget to chill!");
 		System.out.println("Be the ROCK");
 
-	}*/
-
-	public static double area (Square s) {
-		return s.l * s.l;
 	}
-
-	public static double area (Rectangle r) {
-		return r.a * r.b;
-	}
-
+	*/
 }
