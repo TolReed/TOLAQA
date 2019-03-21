@@ -1,6 +1,6 @@
 package ua.stqa.pft.sandbox;
 
-public class TolRock {
+public class ToltheRock {
 	
 	public static void main(String[] args) {
 		//TODO auto-generated (was't auto-generated, I create it by myself)
