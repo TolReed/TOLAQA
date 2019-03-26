@@ -19,12 +19,13 @@ public class ToltheRock {
 		//char : char myCharacter = "TolRock" (Min 0 and Max 65535);
 		Square s = new Square(6);
 		//s.l = 6;
-		System.out.println("Площадь квадрата со стороной " + s.l + " = " + s.area());
+		System.out.println("Площадь квадрата со стороной " + s.l + " = " + s.area());//or area(s); in a case we refer to the function inside Square (without *this* part)
 
 		Rectangle r = new Rectangle(4, 6);
 		//r.a = 4;
 		//r.b = 6;
-		System.out.println("Площадь прямоугольника со сторонфми " + r.a + " и " + r.b +  " = " + r.area());
+		System.out.println("Площадь прямоугольника со сторонами " + r.a + " и " + r.b +  " = " + r.area());//or area(r); in a case we refer to the function inside Rectangle (without *this* part)
+
 
 	}
 
