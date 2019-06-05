@@ -26,7 +26,7 @@ import static java.util.concurrent.TimeUnit.SECONDS;
         wd.findElement(By.name("user")).sendKeys("admin");
         wd.findElement(By.name("pass")).click();
         wd.findElement(By.name("pass")).clear();
-
+        wd.findElement(By.name("pass")).sendKeys("secret");
         wd.findElement(By.xpath("//form[@id='LoginForm']/input[3]")).click();
     }
 
