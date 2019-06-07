@@ -34,7 +34,7 @@ import static java.util.concurrent.TimeUnit.SECONDS;
     public void testGroupCreation () {
         gotoGroupPage("groups");
         initGroupCreation("new");
-        fillGroupData("TolRockGroup_AQA", "TolRochGroupHEader", "TolRock - AQA");
+        fillGroupData(new CreateGroupData("TolRockGroup_AQA", "TolRochGroupHEader", "TolRock - AQA"));
         submitGroupCreation("submit");
         returnToGroupPage("group page");
 
@@ -48,16 +48,16 @@ import static java.util.concurrent.TimeUnit.SECONDS;
             wd.findElement(By.name(submit)).click();
         }
 
-        private void fillGroupData(String name, String header, String footer) {
+        private void fillGroupData(CreateGroupData createGroupData) {//приймає тепер один об"єкт createGroupData
             wd.findElement(By.name("group_name")).click();
             wd.findElement(By.name("group_name")).clear();
-            wd.findElement(By.name("group_name")).sendKeys(name);
+            wd.findElement(By.name("group_name")).sendKeys(createGroupData.getName());
             wd.findElement(By.name("group_header")).click();
             wd.findElement(By.name("group_header")).clear();
-            wd.findElement(By.name("group_header")).sendKeys(header);
+            wd.findElement(By.name("group_header")).sendKeys(createGroupData.getHeader());
             wd.findElement(By.name("group_footer")).click();
             wd.findElement(By.name("group_footer")).clear();
-            wd.findElement(By.name("group_footer")).sendKeys(footer);
+            wd.findElement(By.name("group_footer")).sendKeys(createGroupData.getFooter());
         }
 
         private void initGroupCreation(String s) {
