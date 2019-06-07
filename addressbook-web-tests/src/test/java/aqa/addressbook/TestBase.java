@@ -11,20 +11,11 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 public class TestBase {// базовий клас для одинакових тестовий данних - додаємо записи за допомогою PullMembersUp
     FirefoxDriver wd;
 
-    public static boolean isAlertPresent(FirefoxDriver wd) {
-        try {
-            wd.switchTo().alert();
-            return true;
-        } catch (NoAlertPresentException e) {
-            return false;
-        }
-    }
-
     @BeforeMethod
     public void setUp() throws Exception {
         wd = new FirefoxDriver();
         wd.manage().timeouts().implicitlyWait(60, SECONDS);
-        wd.get("http://localhost/addressbook/group.php");
+        wd.get("http://localhost/addressbook/");
         login("admin", "secret");
     }
 
@@ -58,12 +49,12 @@ public class TestBase {// базовий клас для одинакових т
         wd.findElement(By.name("group_footer")).sendKeys(createGroupData.getFooter());
     }
 
-    protected void initGroupCreation(String s) {
-        wd.findElement(By.name(s)).click();
+    protected void initGroupCreation() {
+        wd.findElement(By.name("new")).click();
     }
 
-    protected void gotoGroupPage(String groups) {
-        wd.findElement(By.linkText(groups)).click();
+    protected void gotoGroupPage() {
+        wd.findElement(By.linkText("groups")).click();
     }
 
     @AfterMethod
@@ -77,6 +68,15 @@ public class TestBase {// базовий клас для одинакових т
 
     protected void selectGroup() {
         wd.findElement(By.name("selected[]")).click();
+    }
+
+    public static boolean isAlertPresent(FirefoxDriver wd) {
+        try {
+            wd.switchTo().alert();
+            return true;
+        } catch (NoAlertPresentException e) {
+            return false;
+        }
     }
 }
 

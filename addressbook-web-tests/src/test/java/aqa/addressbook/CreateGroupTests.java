@@ -6,9 +6,9 @@ import org.testng.annotations.Test;
 
     @Test
     public void testGroupCreation () {
-        gotoGroupPage("groups");
-        initGroupCreation("new");
-        fillGroupData(new CreateGroupData("TolRockGroup_AQA", "TolRochGroupHEader", "TolRock - AQA"));
+        gotoGroupPage();
+        initGroupCreation();
+        fillGroupData(new CreateGroupData("TolRockGroup_AQA777", "TolRochGroupHEader", "TolRock - AQA"));
         submitGroupCreation("submit");
         returnToGroupPage("group page");
 

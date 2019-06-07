@@ -7,7 +7,7 @@ public class DeleteGroupTests extends TestBase {
 
     @Test
     public void testDeleteGroup() {
-        gotoGroupPage("groups");
+        gotoGroupPage();
         selectGroup();
         deleteSelectedGroups();
         returnToGroupPage("groups");
