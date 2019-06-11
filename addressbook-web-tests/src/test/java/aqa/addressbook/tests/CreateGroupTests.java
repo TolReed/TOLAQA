@@ -7,11 +7,11 @@ import org.testng.annotations.Test;
 
     @Test
     public void testGroupCreation () {
-        app.gotoGroupPage();
-        app.initGroupCreation(); // app. спочатку кожного метода, тому що замінили наслідування делегуваннямб і створили нове поле при рефікторингу
-        app.fillGroupData(new CreateGroupData("TolRockGroup_AQA6112019+777" , "TolRochGroupHEader707070", "TolRock707070 - AQA"));
-        app.submitGroupCreation("submit");
-        app.returnToGroupPage("group page");
+        app.getNavigationHelper().gotoGroupPage();
+        app.getGroupHelper().initGroupCreation(); // app. спочатку кожного метода, тому що замінили наслідування делегуваннямб і створили нове поле при рефікторингу
+        app.getGroupHelper().fillGroupData(new CreateGroupData("TolRockGroup_AQA6112019+777" , "TolRochGroupHEader707070", "TolRock707070 - AQA"));
+        app.getGroupHelper().submitGroupCreation("submit");
+        app.getGroupHelper().returnToGroupPage("group page");
 
     }
 
