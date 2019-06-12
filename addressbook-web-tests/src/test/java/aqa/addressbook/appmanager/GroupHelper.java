@@ -35,4 +35,8 @@ public class GroupHelper extends HelperBase {
     public void selectGroup() {// protected - доступно в тому самому класі та класі наслідників
         click(By.name("selected[]"));
     }
+
+    public void initGroupModification() {
+        click(By.name("edit"));
+    }
 }

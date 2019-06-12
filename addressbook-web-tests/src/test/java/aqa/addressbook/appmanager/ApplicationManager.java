@@ -11,7 +11,6 @@ public class ApplicationManager {// будуємо дворівневу архі
     private GroupHelper groupHelper; // видалили файнал після приват
     private SessionHelper sessionHelper;
 
-
     public void init() {
         wd = new FirefoxDriver();
         wd.manage().timeouts().implicitlyWait(60, SECONDS);
@@ -21,8 +20,6 @@ public class ApplicationManager {// будуємо дворівневу архі
         sessionHelper = new SessionHelper(wd);
         sessionHelper.login("admin", "secret");
     }
-
-
 
     public void stop() {
         wd.quit();
