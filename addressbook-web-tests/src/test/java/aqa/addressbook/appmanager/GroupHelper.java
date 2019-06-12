@@ -20,12 +20,12 @@ public class GroupHelper {
     }
 
     public void fillGroupData(CreateGroupData createGroupData) {//приймає тепер один об"єкт createGroupData, допоміжна функція
-        typeGroupName((By.name("group_name")),createGroupData.getName());
-        typeGroupName(By.name("group_header"), createGroupData.getHeader());
-        typeGroupName(By.name("group_footer"), createGroupData.getFooter());
+        type((By.name("group_name")),createGroupData.getName());
+        type(By.name("group_header"), createGroupData.getHeader());
+        type(By.name("group_footer"), createGroupData.getFooter());
     }
 
-    private void typeGroupName(By locator, String text) {
+    private void type(By locator, String text) {
         wd.findElement(locator).click();
         wd.findElement(locator).clear();
         wd.findElement(locator).sendKeys(text);
