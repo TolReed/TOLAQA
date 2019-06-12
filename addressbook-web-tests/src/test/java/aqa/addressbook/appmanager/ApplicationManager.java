@@ -6,7 +6,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
 
-public class ApplicationManager {
+public class ApplicationManager {// будуємо дворівневу архітектуру тестового набору
     FirefoxDriver wd;
 
     private NavigationHelper navigationHelper;

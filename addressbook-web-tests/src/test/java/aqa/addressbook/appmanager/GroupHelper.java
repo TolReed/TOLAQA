@@ -11,24 +11,24 @@ public class GroupHelper {
         this.wd = wd; // присвоюємо, отримуємо доступ до драйверу ініціалізованого а аппМенехер і передану у хелперь
     }
 
-    public void returnToGroupPage(String s) {
-        wd.findElement(By.linkText(s)).click();
+    public void returnToGroupPage() {
+        wd.findElement(By.linkText("group page")).click();
     }
 
-    public void submitGroupCreation(String submit) {
-        wd.findElement(By.name(submit)).click();
+    public void submitGroupCreation() {
+        wd.findElement(By.name("submit")).click();
     }
 
     public void fillGroupData(CreateGroupData createGroupData) {//приймає тепер один об"єкт createGroupData, допоміжна функція
-        wd.findElement(By.name("group_name")).click();
-        wd.findElement(By.name("group_name")).clear();
-        wd.findElement(By.name("group_name")).sendKeys(createGroupData.getName());
-        wd.findElement(By.name("group_header")).click();
-        wd.findElement(By.name("group_header")).clear();
-        wd.findElement(By.name("group_header")).sendKeys(createGroupData.getHeader());
-        wd.findElement(By.name("group_footer")).click();
-        wd.findElement(By.name("group_footer")).clear();
-        wd.findElement(By.name("group_footer")).sendKeys(createGroupData.getFooter());
+        typeGroupName((By.name("group_name")),createGroupData.getName());
+        typeGroupName(By.name("group_header"), createGroupData.getHeader());
+        typeGroupName(By.name("group_footer"), createGroupData.getFooter());
+    }
+
+    private void typeGroupName(By locator, String text) {
+        wd.findElement(locator).click();
+        wd.findElement(locator).clear();
+        wd.findElement(locator).sendKeys(text);
     }
 
     public void initGroupCreation() {
