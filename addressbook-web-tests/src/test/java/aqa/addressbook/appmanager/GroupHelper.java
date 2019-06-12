@@ -4,19 +4,18 @@ import aqa.addressbook.model.CreateGroupData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class GroupHelper {
-    private FirefoxDriver wd;
+public class GroupHelper extends HelperBase {
 
     public GroupHelper(FirefoxDriver wd) {
-        this.wd = wd; // присвоюємо, отримуємо доступ до драйверу ініціалізованого а аппМенехер і передану у хелперь
+        super(wd);// звернення до конструктора базового класа
     }
 
     public void returnToGroupPage() {
-        wd.findElement(By.linkText("group page")).click();
+        click(By.linkText("group page"));
     }
 
     public void submitGroupCreation() {
-        wd.findElement(By.name("submit")).click();
+        click(By.name("submit"));
     }
 
     public void fillGroupData(CreateGroupData createGroupData) {//приймає тепер один об"єкт createGroupData, допоміжна функція
@@ -25,21 +24,15 @@ public class GroupHelper {
         type(By.name("group_footer"), createGroupData.getFooter());
     }
 
-    private void type(By locator, String text) {
-        wd.findElement(locator).click();
-        wd.findElement(locator).clear();
-        wd.findElement(locator).sendKeys(text);
-    }
-
     public void initGroupCreation() {
-        wd.findElement(By.name("new")).click();
+        click(By.name("new"));
     }
 
     public void deleteSelectedGroups() {// private - можна трігнути тільки з метода в том же самому класі нельзя копировать в той же клас
-        wd.findElement(By.name("delete")).click();
+        click(By.name("delete"));
     }
 
     public void selectGroup() {// protected - доступно в тому самому класі та класі наслідників
-        wd.findElement(By.name("selected[]")).click();
+        click(By.name("selected[]"));
     }
 }

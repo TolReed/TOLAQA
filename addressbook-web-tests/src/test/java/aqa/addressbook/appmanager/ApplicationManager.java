@@ -13,14 +13,6 @@ public class ApplicationManager {// будуємо дворівневу архі
     private GroupHelper groupHelper; // видалили файнал після приват
     private SessionHelper sessionHelper;
 
-    public static boolean isAlertPresent(FirefoxDriver wd) {
-        try {
-            wd.switchTo().alert();
-            return true;
-        } catch (NoAlertPresentException e) {
-            return false;
-        }
-    }
 
     public void init() {
         wd = new FirefoxDriver();
