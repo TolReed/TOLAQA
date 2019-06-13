@@ -6,8 +6,6 @@ import org.testng.annotations.Test;
 
 public class GroupModificationTests extends TestBase {
 
-    protected final ApplicationManager app = new ApplicationManager();
-
     @Test
     public void testGroupModification() {
         app.getNavigationHelper().gotoGroupPage();
