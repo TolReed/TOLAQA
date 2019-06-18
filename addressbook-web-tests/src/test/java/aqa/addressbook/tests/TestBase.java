@@ -6,7 +6,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 public class TestBase {// ініціалізірує об"єкт AM а потім знищує його
-    protected final ApplicationManager app = new ApplicationManager(BrowserType.CHROME);// ссилка на новий об"єкт
+    protected final ApplicationManager app = new ApplicationManager(BrowserType.IE);// ссилка на новий об"єкт
 
     @BeforeMethod
     public void setUp() throws Exception {
