@@ -22,4 +22,21 @@ public class EquationTests {
         Assert.assertEquals(e.rootNumber(), 2); // два рішення у цього рівняння
     }
 
+    @Test
+    public void testLinear () { //для лінійного рівняння
+        Equation e = new Equation (0, 1, 1);
+        Assert.assertEquals(e.rootNumber(), 1); // рішення у цього рівняння
+    }
+
+    @Test
+    public void testConstant() { //константа
+        Equation e = new Equation (0, 0, 1);
+        Assert.assertEquals(e.rootNumber(), 0); // рішення у цього рівняння
+    }
+
+    @Test
+    public void testZero () { //для 0 = 0
+        Equation e = new Equation (0, 0, 0);
+        Assert.assertEquals(e.rootNumber(), -1); // n-1 коренів у цього рівняння - безкінечно багато
+    }
 }
