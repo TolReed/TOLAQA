@@ -22,11 +22,11 @@ public class ApplicationManager {// будуємо дворівневу архі
 
     public void init() {
         // delete - String browser = BrowserType.FIREFOX;
-        if (browser == BrowserType.FIREFOX) {
+        if (browser.equals(BrowserType.FIREFOX)) {
             wd = new FirefoxDriver();
-        } else if (browser == BrowserType.CHROME) { //!!! в інтерфейсах методи декларуються, а в насідниках пишуться методи для їх реалізації
+        } else if (browser.equals(BrowserType.CHROME)) { //!!! в інтерфейсах методи декларуються, а в насідниках пишуться методи для їх реалізації
             wd = new ChromeDriver();
-        } else if (browser == BrowserType.IE) {
+        } else if (browser.equals(BrowserType.IE)) {
             wd = new InternetExplorerDriver();
         }
 
