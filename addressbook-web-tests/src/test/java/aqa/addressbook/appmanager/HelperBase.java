@@ -18,8 +18,11 @@ public class HelperBase {
     protected void type(By locator, String text) {
         click(locator);
         if (text != null) { // пердаємо null у тесті як параметер, знгачення поля за замовчуванням
-            wd.findElement(locator).clear();
-            wd.findElement(locator).sendKeys(text);
+            String existingText = wd.findElement(locator).getAttribute("value"); // якщо наш текст дорівнює тексту який уже введено, доцільно використовуватия якщо багато полів і дуже довгий текст
+            if (! text.equals(existingText)) {
+                wd.findElement(locator).clear();
+                wd.findElement(locator).sendKeys(text);
+            }
         }
     }
 
