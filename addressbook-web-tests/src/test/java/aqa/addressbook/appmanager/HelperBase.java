@@ -1,7 +1,10 @@
 package aqa.addressbook.appmanager;
 
+import aqa.addressbook.model.ContactData;
+import aqa.addressbook.model.CreateGroupData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 
 public class HelperBase {
@@ -31,6 +34,21 @@ public class HelperBase {
             wd.switchTo().alert();
             return true;
         } catch (NoAlertPresentException e) {
+            return false;
+        }
+    }
+
+    public void initContactCreation() {
+    }
+
+    public void fillContactForm(ContactData contactData) {
+    }
+
+    protected boolean isElementPresent(By locator) {
+        try {
+            wd.findElement(locator);
+            return true;
+        } catch (NoSuchElementException) {
             return false;
         }
     }

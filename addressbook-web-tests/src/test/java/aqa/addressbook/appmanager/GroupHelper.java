@@ -3,7 +3,6 @@ package aqa.addressbook.appmanager;
 import aqa.addressbook.model.CreateGroupData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class GroupHelper extends HelperBase {
 
