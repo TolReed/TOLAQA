@@ -1,6 +1,5 @@
 package aqa.addressbook.appmanager;
 
-import aqa.addressbook.model.ContactData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;

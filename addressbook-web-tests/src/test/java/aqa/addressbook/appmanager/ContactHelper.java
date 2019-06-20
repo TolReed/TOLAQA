@@ -14,11 +14,12 @@ public class ContactHelper extends HelperBase {
 
     public void initContactCreation() {
         click(By.linkText("add new"));
+        click(By.xpath("//*[@id=\"content\"]/form/input[2]"));
 
     }
 
     public void fillContactForm (ContactData contactData, boolean creation) {
-        click(By.xpath("//*[@id=\"content\"]/form/input[2]"));
+
         type(By.name("firstname"), contactData.getFirstname());
         type(By.name("lastname"), contactData.getLastname());
 
@@ -31,13 +32,13 @@ public class ContactHelper extends HelperBase {
 
     }
 
-    public void submitContactCreation() {click(By.name("submit"));}
+    public void submitContactCreation() {click(By.xpath("//*[@id=\"content\"]/form/input[1]"));}
 
-    public void returnToHomePage() {click(By.name("home page"));}
+    public void returnToHomePage() {click(By.xpath("//*[@id=\"nav\"]/ul/li[1]/a"));}
 
     public void initContactModification() { click(By.cssSelector("img[alt='Edit']"));}
 
     public void submitContactModification() {
-        click(By.name("update"));
+        click(By.xpath("//*[@id=\"content\"]/form[1]/input[22]"));
     }
 }
