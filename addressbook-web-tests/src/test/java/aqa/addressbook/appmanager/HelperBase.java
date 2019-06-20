@@ -1,7 +1,6 @@
 package aqa.addressbook.appmanager;
 
 import aqa.addressbook.model.ContactData;
-import aqa.addressbook.model.CreateGroupData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
@@ -21,7 +20,8 @@ public class HelperBase {
     protected void type(By locator, String text) {
         click(locator);
         if (text != null) { // пердаємо null у тесті як параметер, знгачення поля за замовчуванням
-            String existingText = wd.findElement(locator).getAttribute("value"); // якщо наш текст дорівнює тексту який уже введено, доцільно використовуватия якщо багато полів і дуже довгий текст
+            String existingText = wd.findElement(locator).getAttribute("value");
+            // якщо наш текст дорівнює тексту який уже введено, доцільно використовуватия якщо багато полів і дуже довгий текст
             if (! text.equals(existingText)) {
                 wd.findElement(locator).clear();
                 wd.findElement(locator).sendKeys(text);
@@ -38,17 +38,11 @@ public class HelperBase {
         }
     }
 
-    public void initContactCreation() {
-    }
-
-    public void fillContactForm(ContactData contactData) {
-    }
-
     protected boolean isElementPresent(By locator) {
         try {
             wd.findElement(locator);
             return true;
-        } catch (NoSuchElementException) {
+        } catch (NoSuchElementException e) {
             return false;
         }
     }

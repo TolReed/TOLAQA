@@ -2,12 +2,12 @@ package aqa.addressbook.model;
 
 public class ContactData {
     private final String firstname;
-    private final String secondname;
+    private final String lastname;
     private final String group;
         //конструктор нижче, який дозволяє проініціалізувати об"єкт з трьома значеннями
-        public ContactData(String firstname, String secondname, String group) {
+        public ContactData(String firstname, String lastname, String group) {
             this.firstname = firstname;
-            this.secondname = secondname;
+            this.lastname = lastname;
             this.group = group;
 
         }
@@ -16,13 +16,14 @@ public class ContactData {
             return firstname;
         }
 
-        public String getSecondname() {
-            return secondname;
+        public String getLastname() {
+            return lastname;
         }
 
         public String getGroup() {
             return group;
         }
-    }
+
+
 
 }
