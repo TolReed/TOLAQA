@@ -9,7 +9,7 @@ public class ContactCreateTests extends TestBase {
     public void testGroupCreation () {
         app.getNavigationHelper().gotoHomePage();
         app.getContactHelper().initContactCreation(); // app. спочатку кожного метода, тому що замінили наслідування делегуваннямб і створили нове поле при рефікторингу
-        app.getContactHelper().fillContactForm(new ContactData("TolRockGroup_AQA6182019+777" , "TolRochGroupHEader707070", "TolRockGroup_AQA6182019+777"), true); // null як параметер, для значення за замовчуванням; true заповняємо випадаючий список
+        app.getContactHelper().fillContactForm(new ContactData("TolRockGroup_AQA6212019+777" , "TolRochGroupHEader707070", "TolRockGroup_AQA6182019+777"), true); // null як параметер, для значення за замовчуванням; true заповняємо випадаючий список
         app.getContactHelper().submitContactCreation();
         app.getContactHelper().returnToHomePage();
 

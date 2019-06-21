@@ -24,6 +24,7 @@ public class ContactHelper extends HelperBase {
         type(By.name("lastname"), contactData.getLastname());
 
         if (creation ) {
+            // якщо форма створення то маж бути елемент, інакше виконується блок else
             //імпортуємо новий селект метод і находим наш елемент
             new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
         } else {
@@ -32,11 +33,17 @@ public class ContactHelper extends HelperBase {
 
     }
 
-    public void submitContactCreation() {click(By.xpath("//*[@id=\"content\"]/form/input[1]"));}
+    public void submitContactCreation() {
+        click(By.xpath("//*[@id=\"content\"]/form/input[1]"));
+    }
 
-    public void returnToHomePage() {click(By.xpath("//*[@id=\"nav\"]/ul/li[1]/a"));}
+    public void returnToHomePage() {
+        click(By.xpath("//*[@id=\"nav\"]/ul/li[1]/a"));
+    }
 
-    public void initContactModification() { click(By.cssSelector("img[alt='Edit']"));}
+    public void initContactModification() {
+        click(By.cssSelector("img[alt='Edit']"));
+    }
 
     public void submitContactModification() {
         click(By.xpath("//*[@id=\"content\"]/form[1]/input[22]"));
