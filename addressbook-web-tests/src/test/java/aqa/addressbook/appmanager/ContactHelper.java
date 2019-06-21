@@ -24,6 +24,7 @@ public class ContactHelper extends HelperBase {
         type(By.name("lastname"), contactData.getLastname());
 
         if (creation ) {
+            // перевірка чи є випадний список чи нема
             // якщо форма створення то маж бути елемент, інакше виконується блок else
             //імпортуємо новий селект метод і находим наш елемент
             new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
