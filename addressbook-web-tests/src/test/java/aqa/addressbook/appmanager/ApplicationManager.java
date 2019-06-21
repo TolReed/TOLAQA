@@ -31,7 +31,7 @@ public class ApplicationManager {// будуємо дворівневу архі
             wd = new InternetExplorerDriver();
         }
 
-        wd.manage().timeouts().implicitlyWait(10, SECONDS);
+        wd.manage().timeouts().implicitlyWait(5, SECONDS);
         wd.get("http://localhost/addressbook/");
         groupHelper = new GroupHelper(wd);
         contactHelper = new ContactHelper(wd);
