@@ -49,4 +49,27 @@ public class ContactHelper extends HelperBase {
     public void submitContactModification() {
         click(By.xpath("//*[@id=\"content\"]/form[1]/input[22]"));
     }
+
+    public void deleteSelectedContact() {
+        click(By.name("delete"));
+    }
+
+    public void selectContact() {
+
+        click(By.name("selected[]"));
+    }
+
+    public boolean isThereAContact() {
+        return isElementPresent(By.name("selected[]"));
+    }
+
+    public void createContact(ContactData contact) {
+        initContactCreation();
+        fillContactForm(contact, true);
+        submitContactCreation();
+        returnToHomePage();
+    }
 }
+// private - можна трігнути тільки з метода в том же самому класі нельзя копировать в той же клас
+
+// protected - доступно в тому самому класі та класі наслідників
