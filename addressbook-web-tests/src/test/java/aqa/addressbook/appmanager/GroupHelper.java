@@ -25,14 +25,17 @@ public class GroupHelper extends HelperBase {
     }
 
     public void initGroupCreation() {
+
         click(By.name("new"));
     }
 
     public void deleteSelectedGroups() {// private - можна трігнути тільки з метода в том же самому класі нельзя копировать в той же клас
+
         click(By.name("delete"));
     }
 
     public void selectGroup() {// protected - доступно в тому самому класі та класі наслідників
+
         click(By.name("selected[]"));
     }
 
