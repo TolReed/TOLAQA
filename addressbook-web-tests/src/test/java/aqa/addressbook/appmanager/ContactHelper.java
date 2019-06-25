@@ -40,7 +40,7 @@ public class ContactHelper extends HelperBase {
 
     public void returnToHomePage() {
         click(By.xpath("//*[@id=\"nav\"]/ul/li[1]/a"));
-    }
+        }
 
     public void initContactModification() {
         click(By.cssSelector("img[alt='Edit']"));
