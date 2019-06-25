@@ -51,11 +51,13 @@ public class ContactHelper extends HelperBase {
     }
 
     public void deleteSelectedContact() {
-        click(By.name("delete"));
+        click(By.xpath("//*[@id='content']/form[2]/div[2]/input"));
+        //boolean acceptNextAlert = true;
+        //driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Select all'])[1]/following::input[2]")).click();
+        //assertTrue(closeAlertAndGetItsText().matches("^Delete 1 addresses[\\s\\S]$"));
     }
 
     public void selectContact() {
-
         click(By.name("selected[]"));
     }
 
