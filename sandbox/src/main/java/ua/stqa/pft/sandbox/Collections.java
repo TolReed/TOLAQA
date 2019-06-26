@@ -31,7 +31,7 @@ public class Collections {
 
         // !!!another way - List<String> languages = Arrays.asList("Java", "C#", "Python", "PHP", "Perl", "JavaScript", "Swift");
         for (String l : languages) {
-            System.out.println("Я хочу вивчати " + l + " - Lists");
+            System.out.println("Я хочу вивчати " + l + " - create and print from Lists");
         }
 
 
