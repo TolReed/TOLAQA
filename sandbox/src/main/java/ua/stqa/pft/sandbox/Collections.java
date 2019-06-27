@@ -6,7 +6,7 @@ import java.util.List;
 public class Collections {
 
     public static void main (String[] args) {
-        String [] langs = new String [7]; // створений масив може зберігати 7 елементів
+        String [] langs = new String [7]; // створений масив може зберігати 7 елементів, кількість елементів неможливо змінити після ініціалізації масиву
         langs[0] = "Java";
         langs[1] = "C#";
         langs[2] = "Python";
