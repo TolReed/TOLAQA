@@ -15,7 +15,7 @@ public class CreateGroupData {
         this.footer = footer;
     }
 
-    public CreateGroupData(String name, String header, String footer) { //
+    public CreateGroupData(String name, String header, String footer) { //another method, if we no need id as parameter
         this.id = null;
         this.name = name;
         this.header = header;

@@ -21,7 +21,7 @@ public class GroupModificationTests extends TestBase {
         List<CreateGroupData> before = app.getGroupHelper().getGroupList(); // quantity of group before creation
         app.getGroupHelper().selectGroup(before.size() - 1);
         app.getGroupHelper().initGroupModification();
-        CreateGroupData group = new CreateGroupData("Change1-name", "Change2-header", "Change3-footer");
+        CreateGroupData group = new CreateGroupData(before.get(before.size()-1).getId(),"Change1-name", "Change2-header", "Change3-footer");
         app.getGroupHelper().fillGroupData(group);
         app.getGroupHelper().submitGroupModification();
         app.getGroupHelper().returnToGroupPage();
@@ -30,6 +30,6 @@ public class GroupModificationTests extends TestBase {
 
         before.remove(before.size() - 1);
         before.add(group);//add object ot the list after creation/modification
-        Assert.assertEquals(new HashSet<>(before), new HashSet<>(after));
+        Assert.assertEquals(new HashSet<>(before), new HashSet<>(after));//compare two lists без учета порядка
     }
 }
