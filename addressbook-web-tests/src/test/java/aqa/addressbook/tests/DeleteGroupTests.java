@@ -11,12 +11,12 @@ public class DeleteGroupTests extends TestBase {
     @Test
     public void testDeleteGroup() {
         app.getNavigationHelper().gotoGroupPage();
-        List<CreateGroupData> before = app.getGroupHelper().getGroupList(); // quantity of group before creation
 
         if (! app.getGroupHelper().isThereAGroup()) {//якщо не існує ні одної групи
             app.getGroupHelper().createGroup(new CreateGroupData("Tol-AutoCreate", "Tol-AutoCreate", null));
         }
 
+        List<CreateGroupData> before = app.getGroupHelper().getGroupList(); // quantity of group before creation
         app.getGroupHelper().selectGroup(before.size() - 1); //if we want to delete the last element in the group list = before - 1
         app.getGroupHelper().deleteSelectedGroups();
         app.getGroupHelper().returnToGroupPage();
