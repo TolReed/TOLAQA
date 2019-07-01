@@ -41,7 +41,6 @@ public class GroupHelper extends HelperBase {
     public void selectGroup(int index) {
         // protected - доступно в тому самому класі та класі наслідників
         wd.findElements(By.name("selected[]")).get(index).click();
-
     }
 
     public void initGroupModification() {
@@ -73,7 +72,8 @@ public class GroupHelper extends HelperBase {
         // now, we need iterate all elements in the list, se below how to do it
         for (WebElement element: elements) {
             String name = element.getText(); // get name of the group
-            CreateGroupData group = new CreateGroupData(name, null, null);
+            String id = element.findElement(By.tagName("input")).getAttribute("value"); //search inside one element another element
+            CreateGroupData group = new CreateGroupData(id, name, null, null);
             groups.add(group);//add created object in the list of the groups
         }
         return groups;
