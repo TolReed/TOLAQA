@@ -3,6 +3,10 @@ package aqa.addressbook.appmanager;
 import aqa.addressbook.model.CreateGroupData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class GroupHelper extends HelperBase {
 
@@ -34,9 +38,10 @@ public class GroupHelper extends HelperBase {
         click(By.name("delete"));
     }
 
-    public void selectGroup() {// protected - доступно в тому самому класі та класі наслідників
+    public void selectGroup(int index) {
+        // protected - доступно в тому самому класі та класі наслідників
+        wd.findElements(By.name("selected[]")).get(index).click();
 
-        click(By.name("selected[]"));
     }
 
     public void initGroupModification() {
@@ -56,5 +61,21 @@ public class GroupHelper extends HelperBase {
 
     public boolean isThereAGroup() {
        return isElementPresent(By.name("selected[]"));
+    }
+
+    public List<WebElement> getGroupCount() {
+        return wd.findElements(By.name("selected[]")); //return list of the elements
+    }
+
+    public List<CreateGroupData> getGroupList() {
+        List<CreateGroupData> groups = new ArrayList<CreateGroupData>();
+        List<WebElement> elements = wd.findElements(By.cssSelector("span.group")); // find all elements with tag span
+        // now, we need iterate all elements in the list, se below how to do it
+        for (WebElement element: elements) {
+            String name = element.getText(); // get name of the group
+            CreateGroupData group = new CreateGroupData(name, null, null);
+            groups.add(group);//add created object in the list of the groups
+        }
+        return groups;
     }
 }

@@ -38,5 +38,5 @@ public class Collections {
     }
 
 }
-// for (int i = 0; i < langs.lenght(); i++) {system.out.println(" " + langs[i])}
-// for (int i = 0; i < languages.size(); i++) {system.out.println(" " + languages.get(i))}
+// another one option: for (int i = 0; i < langs.lenght(); i++) {system.out.println(" " + langs[i])}
+// another one option: for (int i = 0; i < languages.size(); i++) {system.out.println(" " + languages.get(i))}
