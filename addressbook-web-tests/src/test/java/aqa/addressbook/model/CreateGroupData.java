@@ -1,5 +1,7 @@
 package aqa.addressbook.model;
 
+import java.util.Objects;
+
 public class CreateGroupData {
     private final String name;
     private final String header;
@@ -21,5 +23,26 @@ public class CreateGroupData {
 
     public String getFooter() {
         return footer;
+    }
+
+    @Override
+    public String toString() {
+        return "CreateGroupData{" +
+                "name='" + name + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) { //generate to equals list elements for test
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CreateGroupData that = (CreateGroupData) o;
+        return Objects.equals(name, that.name);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(name);
     }
 }

@@ -22,6 +22,12 @@ public class DeleteGroupTests extends TestBase {
         app.getGroupHelper().returnToGroupPage();
         List<CreateGroupData> after = app.getGroupHelper().getGroupList(); // quantity of group after creation
         Assert.assertEquals(after.size(), before.size() - 1);
+
+        before.remove(before.size() - 1);
+        Assert.assertEquals(before, after); // less code here, the same results as for multiline comment below, we give to lists for compare
+        /* for (int i = 0; i < after.size(); i++) {
+            Assert.assertEquals(before.get(i), after.get(i));
+        } */
     }
 
 }
