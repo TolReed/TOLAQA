@@ -9,7 +9,7 @@ public class ContactCreateTests extends TestBase {
     public void testContactCreation () {
         app.getNavigationHelper().gotoHomePage();
         app.getContactHelper().initContactCreation();
-        app.getContactHelper().fillContactForm(new ContactData("TolRockGroup_AQA6212019+777" , "TolRochGroupHEader707070", "TolRockGroup_AQA6182019+777"), false); // null як параметер, для значення за замовчуванням; true заповняємо випадаючий список
+        app.getContactHelper().fillContactForm(new ContactData("TolRockGroup_AQA7022019+777" , "TolRochGroupHEader707070", "TolRockGroup_AQA6182019+777"), false); // null як параметер, для значення за замовчуванням; true заповняємо випадаючий список
         app.getContactHelper().submitContactCreation();
         app.getContactHelper().returnToHomePage();
 

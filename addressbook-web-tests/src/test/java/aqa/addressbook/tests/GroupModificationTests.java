@@ -29,7 +29,7 @@ public class GroupModificationTests extends TestBase {
         Assert.assertEquals(after.size(), before.size());
 
         before.remove(before.size() - 1);
-        before.add(group);//add object ot the list after creation/modification
-        Assert.assertEquals(new HashSet<>(before), new HashSet<>(after));//compare two lists без учета порядка
+        before.add(group); //add object to the list after creation/modification of a group
+        Assert.assertEquals(new HashSet<>(before), new HashSet<>(after)); //compare two lists без учета порядка
     }
 }

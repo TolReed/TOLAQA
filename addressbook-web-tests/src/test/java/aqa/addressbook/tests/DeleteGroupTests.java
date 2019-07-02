@@ -27,7 +27,7 @@ public class DeleteGroupTests extends TestBase {
         Assert.assertEquals(before, after); // less code here, the same results as for multiline comment below, we give to lists for compare
         /* for (int i = 0; i < after.size(); i++) {
             Assert.assertEquals(before.get(i), after.get(i));
-        } */
+        } another way to do the same as 3 lines above */
     }
 
 }
