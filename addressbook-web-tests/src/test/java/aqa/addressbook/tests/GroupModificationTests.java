@@ -18,6 +18,7 @@ public class GroupModificationTests extends TestBase {
             app.getGroupHelper().createGroup(new CreateGroupData("Tol-AutoCreate", "Tol-AutoCreate", null));
         }
 
+        //int before = app.getGroupHelper().getGroupCount(); //count groups before test
         List<CreateGroupData> before = app.getGroupHelper().getGroupList(); // quantity of group before creation
         app.getGroupHelper().selectGroup(before.size() - 1);
         app.getGroupHelper().initGroupModification();
@@ -25,7 +26,9 @@ public class GroupModificationTests extends TestBase {
         app.getGroupHelper().fillGroupData(group);
         app.getGroupHelper().submitGroupModification();
         app.getGroupHelper().returnToGroupPage();
+        //int after = app.getGroupHelper().getGroupCount();
         List<CreateGroupData> after = app.getGroupHelper().getGroupList(); // quantity of group after creation
+        //Assert.assertEquals(after, before);
         Assert.assertEquals(after.size(), before.size());
 
         before.remove(before.size() - 1);

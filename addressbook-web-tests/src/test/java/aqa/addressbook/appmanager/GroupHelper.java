@@ -5,8 +5,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import java.util.ArrayList;
 import java.util.List;
+
+import java.util.ArrayList;
+
 
 public class GroupHelper extends HelperBase {
 
@@ -62,20 +64,38 @@ public class GroupHelper extends HelperBase {
        return isElementPresent(By.name("selected[]"));
     }
 
-    public List<WebElement> getGroupCount() {
-        return wd.findElements(By.name("selected[]")); //return list of the elements
+    public int getGroupCount() {
+        return wd.findElements(By.name("selected[]")).size(); //return list of the elements
     }
+
 
     public List<CreateGroupData> getGroupList() {
         List<CreateGroupData> groups = new ArrayList<CreateGroupData>();
-        List<WebElement> elements = wd.findElements(By.cssSelector("span.group")); // find all elements with tag span
-        // now, we need iterate all elements in the list, se below how to do it
-        for (WebElement element: elements) {
+        List<WebElement> elements = wd.findElements(By.cssSelector("span.group"));
+        for (WebElement element : elements) {
             String name = element.getText(); // get name of the group
-            String id = element.findElement(By.tagName("input")).getAttribute("value"); //search inside one element another element
-            CreateGroupData group = new CreateGroupData(id, name, null, null);
+            String id = element.findElement(By.tagName("input")).getAttribute("value");
+            CreateGroupData group = new CreateGroupData(id, name, null, null); //object group data with parameters: id, name, header, footer
             groups.add(group);//add created object in the list of the groups
         }
         return groups;
+
     }
+
 }
+
+
+
+/*public List<CreateGroupData> getGroupList() {
+        List<CreateGroupData> groups = new A
+        List<WebElement> elements = wd.findElements(By.cssSelector("span.group")); // find all elements with tag span
+        // now, we need iterate all elements in the list, se below how to do it
+        for (WebElement element : elements) {
+            String name = element.getText(); // get name of the group
+            //String id = element.findElement(By.tagName("input")).getAttribute("value"); //search inside one element another element
+            CreateGroupData group = new CreateGroupData(id, name, null, null); //object group data with parameters: id, name, header, footer
+            groups.add(group);//add created object in the list of the groups
+        }
+        return groups;
+
+    }*/

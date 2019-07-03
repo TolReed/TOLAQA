@@ -16,11 +16,14 @@ public class DeleteGroupTests extends TestBase {
             app.getGroupHelper().createGroup(new CreateGroupData("Tol-AutoCreate", "Tol-AutoCreate", null));
         }
 
-        List<CreateGroupData> before = app.getGroupHelper().getGroupList(); // quantity of group before creation
+        //int before = app.getGroupHelper().getGroupCount(); //count groups before test
+        List<CreateGroupData> before = app.getGroupHelper().getGroupList(); // list of elements of group before creation
         app.getGroupHelper().selectGroup(before.size() - 1); //if we want to delete the last element in the group list = before - 1
         app.getGroupHelper().deleteSelectedGroups();
         app.getGroupHelper().returnToGroupPage();
+        //int after = app.getGroupHelper().getGroupCount();
         List<CreateGroupData> after = app.getGroupHelper().getGroupList(); // quantity of group after creation
+        //Assert.assertEquals(after, before + 1); //count groups test after the test finish
         Assert.assertEquals(after.size(), before.size() - 1);
 
         before.remove(before.size() - 1);
