@@ -23,7 +23,7 @@ public class CreateGroupTests extends TestBase {
         Assert.assertEquals(after.size(), before.size() + 1);
 
 
-        int max = 0;
+        /*int max = 0;
         for (CreateGroupData g : after) {
             if (g.getId() > max) {
                 max = g.getId();
@@ -33,6 +33,7 @@ public class CreateGroupTests extends TestBase {
 
         before.add(group); //add object to the list after creation/modification of a group
         Assert.assertEquals(new HashSet<>(before), new HashSet<>(after)); //compare two lists без учета порядка
+        */
     }
 
 }

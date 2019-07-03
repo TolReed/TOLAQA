@@ -48,10 +48,10 @@ public class CreateGroupData {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        CreateGroupData that = (CreateGroupData) o;
+        CreateGroupData createGroupData = (CreateGroupData) o;
 
-        if (id != that.id) return false;
-        return name != null ? name.equals(that.name) : that.name == null;
+        if (id != createGroupData.id) return false;
+        return name != null ? name.equals(createGroupData.name) : createGroupData.name == null;
     }
 
     @Override
