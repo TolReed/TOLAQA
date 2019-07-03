@@ -74,7 +74,7 @@ public class GroupHelper extends HelperBase {
         List<WebElement> elements = wd.findElements(By.cssSelector("span.group"));
         for (WebElement element : elements) {
             String name = element.getText(); // get name of the group
-            String id = element.findElement(By.tagName("input")).getAttribute("value");
+            int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
             CreateGroupData group = new CreateGroupData(id, name, null, null); //object group data with parameters: id, name, header, footer
             groups.add(group);//add created object in the list of the groups
         }

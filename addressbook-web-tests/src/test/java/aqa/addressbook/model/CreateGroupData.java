@@ -3,12 +3,12 @@ package aqa.addressbook.model;
 import java.util.Objects;
 
 public class CreateGroupData {
-    private final String id;
+    private int id;
     private final String name;
     private final String header;
     private final String footer;
     //конструктор нижче, який дозволяє проініціалізувати об"єкт з трьома значеннями
-    public CreateGroupData(String id, String name, String header, String footer) {
+    public CreateGroupData(int id, String name, String header, String footer) {
         this.id = id;
         this.name = name;
         this.header = header;
@@ -16,7 +16,7 @@ public class CreateGroupData {
     }
 
     public CreateGroupData(String name, String header, String footer) { //another method, if we no need id as parameter
-        this.id = null;
+        this.id = 0;
         this.name = name;
         this.header = header;
         this.footer = footer;
@@ -35,14 +35,12 @@ public class CreateGroupData {
         return footer;
     }
 
-    public String getId() { return id; }
+    public int getId() {
+        return id;
+    }
 
-    @Override
-    public String toString() {
-        return "CreateGroupData{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                '}';
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Override
@@ -52,14 +50,23 @@ public class CreateGroupData {
 
         CreateGroupData that = (CreateGroupData) o;
 
-        if (id != null ? !id.equals(that.id) : that.id != null) return false;
+        if (id != that.id) return false;
         return name != null ? name.equals(that.name) : that.name == null;
     }
 
     @Override
     public int hashCode() {
-        int result = id != null ? id.hashCode() : 0;
+        int result = id;
         result = 31 * result + (name != null ? name.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "CreateGroupData{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                '}';
+    }
+
 }
