@@ -1,4 +1,4 @@
-package AutomationEXPERT;
+package AEXPERT;
 
 import java.sql.SQLException;
 

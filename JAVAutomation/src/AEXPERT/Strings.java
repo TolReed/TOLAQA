@@ -1,4 +1,4 @@
-package AutomationEXPERT;
+package AEXPERT;
 
 public class Strings {
 	

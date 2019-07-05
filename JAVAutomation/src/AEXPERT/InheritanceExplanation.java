@@ -1,4 +1,4 @@
-package AutomationEXPERT;
+package AEXPERT;
 
 import automobile.BMW;
 import automobile.Cars;
