@@ -81,22 +81,3 @@ public class GroupHelper extends HelperBase {
 
     }
 }
-
-
-
-/*
-    public List<CreateGroupData> getGroupList() {
-        List<CreateGroupData> groups = new ArrayList<CreateGroupData>();
-        List<WebElement> elements = wd.findElements(By.cssSelector("span.group"));
-        for (WebElement element : elements) {
-            String name = element.getText(); // get name of the group
-            int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
-            CreateGroupData group = new CreateGroupData(id, name, null, null); //object group data with parameters: id, name, header, footer
-            groups.add(group);//add created object in the list of the groups
-        }
-        return groups;
-
-    }
-
-
-*/
